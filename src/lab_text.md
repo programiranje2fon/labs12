@@ -1,4 +1,4 @@
-#Laboratorijske vežbe – dvočas br. 12
+#Lab no. 12
 
 
 ##Problem 1
