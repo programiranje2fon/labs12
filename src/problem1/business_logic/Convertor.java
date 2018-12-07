@@ -1,4 +1,4 @@
-package problem1.poslovna_logika;
+package problem1.business_logic;
 
 public class Convertor {
 	public double convertDIE(double dinar) {

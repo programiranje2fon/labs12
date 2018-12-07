@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-import problem1.poslovna_logika.Convertor;
+import problem1.business_logic.Convertor;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;

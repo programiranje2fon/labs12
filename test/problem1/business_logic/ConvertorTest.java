@@ -1,4 +1,4 @@
-package problem1.poslovna_logika;
+package problem1.business_logic;
 
 import static org.junit.Assert.*;
 
@@ -6,7 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import problem1.poslovna_logika.Convertor;
+import problem1.business_logic.Convertor;
 
 public class ConvertorTest {
 
