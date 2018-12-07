@@ -10,8 +10,11 @@ import problem1.poslovna_logika.Convertor;
 
 public class ConvertorTest {
 
+	private Convertor convertor;
+	
 	@Before
 	public void setUp() throws Exception {
+		convertor = new Convertor();
 	}
 
 	@After
@@ -20,13 +23,13 @@ public class ConvertorTest {
 
 	@Test
 	public void method_convertDIE() {
-		double actual = Convertor.convertDIE(240);
+		double actual = convertor.convertDIE(240);
 		assertEquals("Dinars to euros conversion is not being calculated well", 2, actual, 0.01);
 	}
 
 	@Test
 	public void testConvertEID() {
-		double actual = Convertor.convertEID(10);
+		double actual = convertor.convertEID(10);
 		assertEquals("Euros to dilars conversion is not being calculated well", 1200, actual, 0.01);
 	}
 

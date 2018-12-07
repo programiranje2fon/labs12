@@ -1,3 +1,4 @@
+package test;
 
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
@@ -8,7 +9,6 @@ public class RunTests {
 
 	public static void main(String[] args) {
 		runTestsForClass(problem1.poslovna_logika.ConvertorTest.class);
-		runTestsForClass(problem1.gui.ConvertorGUITest.class);
 		runTestsForClass(problem2.business_logic.BMICalculatorTest.class);		
 
 	}

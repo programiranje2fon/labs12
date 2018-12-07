@@ -10,8 +10,11 @@ import problem2.business_logic.BMICalculator;
 
 public class BMICalculatorTest {
 
+	private BMICalculator bmiCalculator;
+	
 	@Before
 	public void setUp() throws Exception {
+		bmiCalculator = new BMICalculator();
 	}
 
 	@After
@@ -20,7 +23,7 @@ public class BMICalculatorTest {
 
 	@Test
 	public void method_calculateBMI() {
-		double actual = BMICalculator.calculateBMI(4, 4);
+		double actual = bmiCalculator.calculateBMI(4, 4);
 		assertEquals("BMI was not calculated well", 0.25, actual, 0.0001);
 	}
 

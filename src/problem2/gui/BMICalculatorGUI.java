@@ -18,6 +18,7 @@ public class BMICalculatorGUI {
 	private JTextField heightField;
 	private JTextField weightField;
 	private JTextField bmiField;
+	private BMICalculator bmiCalculator = new BMICalculator();
 
 	/**
 	 * Launch the application.
@@ -75,7 +76,7 @@ public class BMICalculatorGUI {
 			public void actionPerformed(ActionEvent e) {
 				double height = Double.parseDouble(heightField.getText());
 				double weight = Double.parseDouble(weightField.getText());
-				double bmi = BMICalculator.calculateBMI(height, weight);
+				double bmi = bmiCalculator.calculateBMI(height, weight);
 				bmiField.setText(""+bmi);				
 			}
 		});
