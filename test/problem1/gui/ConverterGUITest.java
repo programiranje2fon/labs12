@@ -10,15 +10,15 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import problem1.gui.ConvertorGUI;
+import problem1.gui.ConverterGUI;
 
-public class ConvertorGUITest {
+public class ConverterGUITest {
 
-	ConvertorGUI gui;
+	ConverterGUI gui;
 	
 	@Before
 	public void setUp() throws Exception {
-		gui = new ConvertorGUI();
+		gui = new ConverterGUI();
 	}
 
 	@After
@@ -30,7 +30,7 @@ public class ConvertorGUITest {
 	public void tekstualnaPoljaKonvertorGUI() {
 
 		try {
-			Field dinField = ConvertorGUI.class.getDeclaredField("dinField");
+			Field dinField = ConverterGUI.class.getDeclaredField("dinField");
 			dinField.setAccessible(true);
 			JTextField dinTextField = (JTextField) dinField.get(gui);	
 		} catch (NoSuchFieldException e) {
@@ -47,7 +47,7 @@ public class ConvertorGUITest {
 		}
 		
 		try {
-			Field eurField = ConvertorGUI.class.getDeclaredField("eurField");
+			Field eurField = ConverterGUI.class.getDeclaredField("eurField");
 			eurField.setAccessible(true);
 			JTextField eurTextField = (JTextField) eurField.get(gui);					
 		} catch (NoSuchFieldException e) {

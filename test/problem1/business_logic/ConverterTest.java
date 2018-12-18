@@ -6,15 +6,15 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import problem1.business_logic.Convertor;
+import problem1.business_logic.Converter;
 
-public class ConvertorTest {
+public class ConverterTest {
 
-	private Convertor convertor;
+	private Converter converter;
 	
 	@Before
 	public void setUp() throws Exception {
-		convertor = new Convertor();
+		converter = new Converter();
 	}
 
 	@After
@@ -23,13 +23,13 @@ public class ConvertorTest {
 
 	@Test
 	public void method_convertDIE() {
-		double actual = convertor.convertDIE(240);
+		double actual = converter.convertDIE(240);
 		assertEquals("Dinars to euros conversion is not being calculated well", 2, actual, 0.01);
 	}
 
 	@Test
 	public void testConvertEID() {
-		double actual = convertor.convertEID(10);
+		double actual = converter.convertEID(10);
 		assertEquals("Euros to dilars conversion is not being calculated well", 1200, actual, 0.01);
 	}
 

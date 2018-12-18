@@ -1,24 +1,32 @@
 package problem2.gui;
 
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
 import problem2.business_logic.BMICalculator;
 
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+public class BMICalculatorGUI extends JFrame {
 
-public class BMICalculatorGUI {
+	private static final long serialVersionUID = 1L;
 
-	private JFrame frmBMICalculator;
+	private BMICalculator bmiCalculator = new BMICalculator();
+	
+	private JPanel contentPane;
+	private JLabel lblHeight;
+	private JLabel lblWeight;
 	private JTextField heightField;
 	private JTextField weightField;
+	private JButton btnCalculateBMI;
+	private JLabel lblBmi;
 	private JTextField bmiField;
-	private BMICalculator bmiCalculator = new BMICalculator();
 
 	/**
 	 * Launch the application.
@@ -27,8 +35,8 @@ public class BMICalculatorGUI {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					BMICalculatorGUI window = new BMICalculatorGUI();
-					window.frmBMICalculator.setVisible(true);
+					BMICalculatorGUI frame = new BMICalculatorGUI();
+					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -37,60 +45,90 @@ public class BMICalculatorGUI {
 	}
 
 	/**
-	 * Create the application.
+	 * Create the frame.
 	 */
 	public BMICalculatorGUI() {
-		initialize();
+		setTitle("BMI Calculator");
+		setResizable(false);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 296, 279);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		contentPane.add(getLblHeight());
+		contentPane.add(getLblWeight());
+		contentPane.add(getHeightField());
+		contentPane.add(getWeightField());
+		contentPane.add(getBtnIzracunajBmi());
+		contentPane.add(getLblBmi());
+		contentPane.add(getBmiField());
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	private void initialize() {
-		frmBMICalculator = new JFrame();
-		frmBMICalculator.setTitle("BMI Calculator");
-		frmBMICalculator.setBounds(100, 100, 270, 300);
-		frmBMICalculator.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frmBMICalculator.getContentPane().setLayout(null);
-		
-		JLabel lblVisina = new JLabel("Height:");
-		lblVisina.setBounds(26, 32, 46, 14);
-		frmBMICalculator.getContentPane().add(lblVisina);
-		
-		JLabel lblTezina = new JLabel("Weight:");
-		lblTezina.setBounds(26, 76, 46, 14);
-		frmBMICalculator.getContentPane().add(lblTezina);
-		
-		heightField = new JTextField();
-		heightField.setBounds(133, 29, 86, 20);
-		frmBMICalculator.getContentPane().add(heightField);
-		heightField.setColumns(10);
-		
-		weightField = new JTextField();
-		weightField.setBounds(133, 73, 86, 20);
-		frmBMICalculator.getContentPane().add(weightField);
-		weightField.setColumns(10);
-		
-		JButton btnCalculateBMI = new JButton("Calculate BMI");
-		btnCalculateBMI.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				double height = Double.parseDouble(heightField.getText());
-				double weight = Double.parseDouble(weightField.getText());
-				double bmi = bmiCalculator.calculateBMI(height, weight);
-				bmiField.setText(""+bmi);				
-			}
-		});
-		btnCalculateBMI.setBounds(58, 129, 105, 23);
-		frmBMICalculator.getContentPane().add(btnCalculateBMI);
-		
-		JLabel lblBmi = new JLabel("BMI:");
-		lblBmi.setBounds(26, 190, 38, 14);
-		frmBMICalculator.getContentPane().add(lblBmi);
-		
-		bmiField = new JTextField();
-		bmiField.setBounds(133, 187, 86, 20);
-		frmBMICalculator.getContentPane().add(bmiField);
-		bmiField.setColumns(10);
+	private JLabel getLblHeight() {
+		if (lblHeight == null) {
+			lblHeight = new JLabel("Height:");
+			lblHeight.setBounds(35, 40, 46, 14);
+		}
+		return lblHeight;
 	}
 
+	private JLabel getLblWeight() {
+		if (lblWeight == null) {
+			lblWeight = new JLabel("Weight:");
+			lblWeight.setBounds(35, 90, 46, 14);
+		}
+		return lblWeight;
+	}
+
+	private JTextField getHeightField() {
+		if (heightField == null) {
+			heightField = new JTextField();
+			heightField.setBounds(123, 37, 136, 20);
+			heightField.setColumns(10);
+		}
+		return heightField;
+	}
+
+	private JTextField getWeightField() {
+		if (weightField == null) {
+			weightField = new JTextField();
+			weightField.setBounds(123, 87, 136, 20);
+			weightField.setColumns(10);
+		}
+		return weightField;
+	}
+
+	private JButton getBtnIzracunajBmi() {
+		if (btnCalculateBMI == null) {
+			btnCalculateBMI = new JButton("Calculate BMI");
+			btnCalculateBMI.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					double height = Double.parseDouble(heightField.getText());
+					double weight = Double.parseDouble(weightField.getText());
+					double bmi = bmiCalculator.calculateBMI(height, weight);
+					bmiField.setText("" + bmi);
+				}
+			});
+			btnCalculateBMI.setBounds(35, 142, 131, 23);
+		}
+		return btnCalculateBMI;
+	}
+
+	private JLabel getLblBmi() {
+		if (lblBmi == null) {
+			lblBmi = new JLabel("BMI:");
+			lblBmi.setBounds(35, 205, 61, 14);
+		}
+		return lblBmi;
+	}
+
+	private JTextField getBmiField() {
+		if (bmiField == null) {
+			bmiField = new JTextField();
+			bmiField.setBounds(123, 202, 136, 20);
+			bmiField.setColumns(10);
+		}
+		return bmiField;
+	}
 }

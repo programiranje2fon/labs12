@@ -1,6 +1,6 @@
 package problem1.business_logic;
 
-public class Convertor {
+public class Converter {
 	public double convertDIE(double dinar) {
 		return dinar / 120;
 	}

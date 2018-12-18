@@ -8,7 +8,7 @@ import org.junit.runner.notification.Failure;
 public class RunTests {
 
 	public static void main(String[] args) {
-		runTestsForClass(problem1.business_logic.ConvertorTest.class);
+		runTestsForClass(problem1.business_logic.ConverterTest.class);
 		runTestsForClass(problem2.business_logic.BMICalculatorTest.class);		
 
 	}
