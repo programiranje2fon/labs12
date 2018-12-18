@@ -76,7 +76,7 @@ public class BMICalculatorGUI extends JFrame {
 	private JLabel getLblWeight() {
 		if (lblWeight == null) {
 			lblWeight = new JLabel("Weight:");
-			lblWeight.setBounds(35, 90, 46, 14);
+			lblWeight.setBounds(35, 90, 76, 14);
 		}
 		return lblWeight;
 	}

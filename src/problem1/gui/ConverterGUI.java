@@ -66,7 +66,7 @@ public class ConverterGUI extends JFrame {
 	private JLabel getLblAmountRSD() {
 		if (lblAmountRSD == null) {
 			lblAmountRSD = new JLabel("Amount RSD");
-			lblAmountRSD.setBounds(66, 82, 78, 14);
+			lblAmountRSD.setBounds(36, 82, 121, 14);
 		}
 		return lblAmountRSD;
 	}
@@ -74,7 +74,7 @@ public class ConverterGUI extends JFrame {
 	private JLabel getLblAmountEUR() {
 		if (lblAmountEUR == null) {
 			lblAmountEUR = new JLabel("Amount EUR");
-			lblAmountEUR.setBounds(217, 82, 91, 14);
+			lblAmountEUR.setBounds(235, 82, 91, 14);
 		}
 		return lblAmountEUR;
 	}
@@ -82,7 +82,7 @@ public class ConverterGUI extends JFrame {
 	private JTextField getRSDField() {
 		if (rsdField == null) {
 			rsdField = new JTextField();
-			rsdField.setBounds(66, 109, 103, 20);
+			rsdField.setBounds(30, 109, 175, 20);
 			rsdField.setColumns(10);
 		}
 		return rsdField;
@@ -91,7 +91,7 @@ public class ConverterGUI extends JFrame {
 	private JTextField getEURField() {
 		if (eurField == null) {
 			eurField = new JTextField();
-			eurField.setBounds(217, 109, 113, 20);
+			eurField.setBounds(227, 109, 175, 20);
 			eurField.setColumns(10);
 		}
 		return eurField;
@@ -99,7 +99,7 @@ public class ConverterGUI extends JFrame {
 
 	private JButton getBtnConvertDIE() {
 		if (btnConvertDiE == null) {
-			btnConvertDiE = new JButton("Convert RSD to Euros");
+			btnConvertDiE = new JButton("Convert RSD to EUR");
 			btnConvertDiE.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					double rsd = Double.parseDouble(rsdField.getText());
@@ -107,14 +107,14 @@ public class ConverterGUI extends JFrame {
 					eurField.setText("" + eur);
 				}
 			});
-			btnConvertDiE.setBounds(66, 159, 103, 23);
+			btnConvertDiE.setBounds(30, 159, 175, 23);
 		}
 		return btnConvertDiE;
 	}
 
 	private JButton getBtnKonvertujEud() {
 		if (btnConvertEiD == null) {
-			btnConvertEiD = new JButton("Convert Euros to RSD");
+			btnConvertEiD = new JButton("Convert EUR to RSD");
 			btnConvertEiD.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					double euros = Double.parseDouble(eurField.getText());
@@ -122,7 +122,7 @@ public class ConverterGUI extends JFrame {
 					rsdField.setText("" + rsd);
 				}
 			});
-			btnConvertEiD.setBounds(217, 159, 113, 23);
+			btnConvertEiD.setBounds(227, 159, 175, 23);
 		}
 		return btnConvertEiD;
 	}
