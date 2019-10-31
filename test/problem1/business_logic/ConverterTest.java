@@ -22,15 +22,15 @@ public class ConverterTest {
 	}
 
 	@Test
-	public void method_convertDIE() {
-		double actual = converter.convertDIE(240);
+	public void method_convertDinarsToEuro() {
+		double actual = converter.convertDinarsToEuros(240);
 		assertEquals("Dinars to euros conversion is not being calculated well", 2, actual, 0.01);
 	}
 
 	@Test
-	public void testConvertEID() {
-		double actual = converter.convertEID(10);
-		assertEquals("Euros to dilars conversion is not being calculated well", 1200, actual, 0.01);
+	public void method_convertEurosToDinars() {
+		double actual = converter.convertEurosToDinars(10);
+		assertEquals("Euros to dinars conversion is not being calculated well", 1200, actual, 0.01);
 	}
 
 }

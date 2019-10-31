@@ -8,10 +8,10 @@ Window > Preferences > WindowBuilder > Swing > CodeGeneration > Lazy
 
 Create class **Converter** in package **problem1.business_logic** that has:
 
-1. Public method **convertDIE** that gets amount in RSD (as a real number) as its input argument. The
+1. Public method **convertDinarsToEuros** that gets amount in RSD (as a real number) as its input argument. The
 method converts this amount into the equivalent amount in Euros and returns the result (1EUR = 120RSD).
 
-2. Public method **convertEID** that gets amount in Euros (as a real number) as its input argument. The
+2. Public method **convertEurosToDinars** that gets amount in Euros (as a real number) as its input argument. The
 method converts this amount into RSD and returns the result (1EUR = 120RSD).
 
 Create class **ConvertorGUI** in package **problem1.gui**, which creates GUI as the one shown in the figure below. Assure that the GUI's dimensions are not editable. In addition, the following applies to the **ConvertorGUI** class:

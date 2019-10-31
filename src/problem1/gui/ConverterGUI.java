@@ -103,7 +103,7 @@ public class ConverterGUI extends JFrame {
 			btnConvertDiE.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					double rsd = Double.parseDouble(rsdField.getText());
-					double eur = converter.convertDIE(rsd);
+					double eur = converter.convertDinarsToEuros(rsd);
 					eurField.setText("" + eur);
 				}
 			});
@@ -118,7 +118,7 @@ public class ConverterGUI extends JFrame {
 			btnConvertEiD.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					double euros = Double.parseDouble(eurField.getText());
-					double rsd = converter.convertEID(euros);
+					double rsd = converter.convertEurosToDinars(euros);
 					rsdField.setText("" + rsd);
 				}
 			});
